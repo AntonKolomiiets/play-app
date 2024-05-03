@@ -10,7 +10,9 @@ const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
+    {/* Query Client for Calling API with React Query */}
+    <QueryClientProvider client={queryClient}> 
+    {/* BrowserRouter for React Router V6 */}
       <BrowserRouter>
         <App />
       </BrowserRouter>

@@ -6,12 +6,14 @@ import { useAuth } from "../AuthContext";
 export default function Nav() {
   const [menuOpen, setMenuOpen] = React.useState(false);
   const navigate = useNavigate();
+
+  // Logout function from AuthContext
   const { isAuthenticated, logout } = useAuth();
 
-  const handleLogout = () => {
-    logout(); 
-    navigate("/login"); 
-  };
+  function handleLogout() {
+    logout();
+    navigate("/login");
+  }
 
   return (
     <nav className="Nav">
@@ -39,6 +41,7 @@ export default function Nav() {
           <NavLink to="/dogs">Dogs</NavLink>
         </li>
         <li>
+          {/* change button based on state */}
           {isAuthenticated ? (
             <button onClick={handleLogout}>Logout</button>
           ) : (

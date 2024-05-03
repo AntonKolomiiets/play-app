@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./TaskApp.css"
 
+// Mock todo list
 export default function TaskApp() {
   const [count, setCount] = useState([
     "new task",
@@ -30,16 +31,16 @@ export default function TaskApp() {
                 </td>
               </tr>
             ))}
-            <tr>
+            {/* <tr>
               <td>
-                {/* <form>
+                <form>
                   <input
                     type="text"
                     style={{ background: "none", border: "none" }}
                   />
-                </form> */}
+                </form>
               </td>
-            </tr>
+            </tr> */}
           </table>
         </div>
       </div>

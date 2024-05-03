@@ -1,23 +1,26 @@
 import { ChangeEvent } from "react";
 import { useQuery } from "react-query";
-import { useBreed } from "../context";
+import { useBreed } from "../DogsComntext";
 
+// struct 
 interface DogApiResponse {
   message: { [key: string]: string[] };
   status: string;
 }
 
+// main
 export default function GetBreed() {
   const fetchBreeds = async () => {
     const response = await fetch("https://dog.ceo/api/breeds/list/all");
     if (!response.ok) throw new Error("Network response was not ok");
-    return response.json() as Promise<DogApiResponse>; // Ensure the response matches DogApiResponse structure
+    return response.json() 
   };
 
   const { data, isError, error, isLoading } = useQuery<DogApiResponse, Error>(
     ["breeds"],
     fetchBreeds
   );
+  // localise global variable
   const { selectedBreed, setSelectedBreed } = useBreed();
 
   const handleBreedChange = (event: ChangeEvent<HTMLSelectElement>) => {
@@ -27,7 +30,6 @@ export default function GetBreed() {
 
   if (isLoading) return <p>Loading...</p>;
   if (isError) return <p>Error: {error.message}</p>;
-
 
   return (
     <div>

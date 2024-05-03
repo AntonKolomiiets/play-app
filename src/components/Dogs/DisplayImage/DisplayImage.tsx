@@ -1,12 +1,9 @@
 import { useQuery } from "react-query";
-import { useBreed, useNumber } from "../context";
+import { useBreed, useNumber } from "../DogsComntext";
 
-interface ApiResponse {
-  message: string[]; 
-  status: string;
-}
-
+// main
 export default function DisplayImage() {
+  // localise global variable
   const { selectedBreed } = useBreed();
   const { selectedNumber } = useNumber();
 
@@ -16,15 +13,15 @@ export default function DisplayImage() {
       "/"
     )}/images/random/${selectedNumber}`;
     const response = await fetch(url);
-    const data = (await response.json()) as ApiResponse;
+    const data = await response.json();
     return data.message;
   };
 
   const {
-    data: imageUrls, 
+    data: imageUrls,
     isError,
     isLoading,
-  } = useQuery<string[], Error>( 
+  } = useQuery<string[], Error>(
     ["fetchImageUrl", selectedBreed, selectedNumber],
     fetchImageUrl,
     {
@@ -33,11 +30,12 @@ export default function DisplayImage() {
   );
 
   if (isLoading) return <p>Loading...</p>;
-  if (isError || !imageUrls) return <p>Error loading image or no images available.</p>;
+  if (isError || !imageUrls)
+    return <p>Error loading image or no images available.</p>;
 
   return (
     <div>
-      {imageUrls.map((url, index) => (  
+      {imageUrls.map((url, index) => (
         <img
           key={index}
           src={url}
@@ -47,5 +45,4 @@ export default function DisplayImage() {
       ))}
     </div>
   );
-};
-
+}

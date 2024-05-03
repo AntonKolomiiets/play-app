@@ -59,8 +59,8 @@ nav .menu span {
   background-color: #fff;
   border-radius: 0.2rem;
 }
-
-@media (max-width: 480px) {
+/* Contextually check if viewport is vertical */
+@media (max-width: 580px) {
   nav .menu {
     display: flex;
   }
