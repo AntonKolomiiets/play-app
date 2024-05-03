@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+@import "./src/assets/fonts/satoshi.css";
+
+
+.TaskApp {
+    margin: 4%;
+}
+
+.main {
+  /* font-family: "Nunito", sans-serif; */
+  font-family: 'Satoshi-Light', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-display: swap;
+  font-style: normal;
+  font-size: 0.8rem;
+  box-sizing: border-box;
+  width: 360px;
+  height: auto;
+  padding: 2%;
+  background-color: #fef9f4;
+  display: flex;
+  
+  justify-content: center;
+  border-radius: 15px;
+  /* border: 1px solid; */
+  /* border-color: black; */
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
+  
+}
+
+.job {  
+  text-transform: capitalize;
+  text-align: left;
+  margin: auto;
+  background-image: url('./nnnoise.svg');
+  background-size: contain;
+  background-color: #fef9f4;
+  width: 350px;
+  border-collapse: collapse;
+}
+.job td {
+  border-bottom: 1px solid;
+  
+  border-color: #a9b6b75b;
+  /* border-color: #a9b6b706; */
+  /* box-shadow: 0px 0px 2px rgba(211, 211, 211, 0.906) inset; */
+  
+}
+.job td:first-child {
+  width: 79%;
+  
+}
+.job td:last-child {
+  border-color: #fef9f4;
+  box-shadow: none;
+}
+
+.last-item td {
+  border-bottom: none;
+}
+
+button {
+  background-color: #8baaad;
+  border: none;
+  border-radius: 8px;
+  margin: 0.5%;
+  margin-left: 4px;
+  box-shadow: 0.1px 0.1px 1px rgba(0, 0, 0, 0.75);
+  font-weight: 400;
+  
+}
+button:hover {
+  filter: brightness(85%);
+  cursor: pointer;
+}
+button:active {
+  box-shadow: none;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}

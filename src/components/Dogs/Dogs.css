@@ -1,0 +1,12 @@
+
+.Dogs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+select {
+    width: fit-content;
+  overflow-y: auto; /* Enables vertical scrollbar if necessary */
+  /* Adjust this value based on the total height of 10 options */
+}
