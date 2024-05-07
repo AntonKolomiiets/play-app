@@ -2,13 +2,13 @@ import { Routes } from "react-router-dom";
 import { Route } from "react-router-dom";
 import "./App.css";
 import Nav from "./components/Nav/Nav";
-import About from "./pages/About";
-import Dogs from "./components/Dogs/Dogs";
-import TaskApp from "./components/TaskApp/TaskApp";
-import Home from "./components/Home/Home";
-import Login from "./components/Login/Login";
+import About from "./pages/About/About";
+import Dogs from "./pages/Dogs/Dogs";
+import TaskApp from "./pages/TaskApp/TaskApp";
+import Home from "./pages/Home/Home";
+import Login from "./pages/Login/Login";
 import { PrivateRoute } from "./components/PrivateRoute/PrivateRoute"; // Component for cheching is user is Looged
-import { AuthProvider } from "./components/AuthContext"; // Context for for checking if user is logged in
+import { AuthProvider } from "./contexts/AuthContext"; // Context for for checking if user is logged in
 
 function App() {
   return (

@@ -1,19 +1,19 @@
 import { ChangeEvent } from "react";
 import { useQuery } from "react-query";
-import { useBreed } from "../DogsComntext";
+import { useBreed } from "../../contexts/DogsContext";
 
-// struct 
+// struct
 interface DogApiResponse {
   message: { [key: string]: string[] };
   status: string;
 }
 
 // main
-export default function GetBreed() {
+export default function BreedSelector() {
   const fetchBreeds = async () => {
     const response = await fetch("https://dog.ceo/api/breeds/list/all");
     if (!response.ok) throw new Error("Network response was not ok");
-    return response.json() 
+    return response.json();
   };
 
   const { data, isError, error, isLoading } = useQuery<DogApiResponse, Error>(

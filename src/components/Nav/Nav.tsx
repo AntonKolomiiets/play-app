@@ -1,7 +1,7 @@
 import "./Nav.css";
 import React from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import { useAuth } from "../AuthContext";
+import { useAuth } from "../../contexts/AuthContext";
 
 export default function Nav() {
   const [menuOpen, setMenuOpen] = React.useState(false);

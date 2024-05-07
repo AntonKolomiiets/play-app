@@ -1,8 +1,8 @@
 import { useQuery } from "react-query";
-import { useBreed, useNumber } from "../DogsComntext";
+import { useBreed, useNumber } from "../../contexts/DogsContext";
 
 // main
-export default function DisplayImage() {
+export default function ImageContainer() {
   // localise global variable
   const { selectedBreed } = useBreed();
   const { selectedNumber } = useNumber();

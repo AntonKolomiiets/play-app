@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useAuth } from "../AuthContext";
+import { useAuth } from "../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
@@ -25,6 +25,7 @@ export default function Login() {
         onChange={(e) => setUsername(e.target.value)}
         placeholder="Username"
       />
+      <br></br>
       <input
         type="password"
         value={password}
@@ -34,4 +35,4 @@ export default function Login() {
       <button type="submit">Login</button>
     </form>
   );
-};
+}

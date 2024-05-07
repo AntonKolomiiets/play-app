@@ -1,7 +1,7 @@
-import { useNumber } from "../DogsComntext";
+import { useNumber } from "../../../contexts/DogsContext";
 
 // main
-export default function GetNumber() {
+export default function NumberSelector() {
   // localise global variable
   const { selectedNumber, setSelectedNumber } = useNumber();
 
