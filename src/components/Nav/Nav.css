@@ -22,6 +22,16 @@ nav .title {
   font-weight: bold;
 }
 
+nav #navButton {
+  border-radius: 8px;
+  height: 2.1rem;
+  width: 3rem;
+  margin-right: 1rem;
+  background-color: #2f71a0;
+  color: #fff;
+  box-shadow: none;
+}
+
 nav ul {
   display: flex;
 }

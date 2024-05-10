@@ -1,6 +1,6 @@
 import { ChangeEvent } from "react";
 import { useQuery } from "react-query";
-import { useBreed } from "../../contexts/DogsContext";
+import { useBreed } from "../../../contexts/DogsContext";
 
 // struct
 interface DogApiResponse {

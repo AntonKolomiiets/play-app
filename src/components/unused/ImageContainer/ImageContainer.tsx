@@ -1,5 +1,5 @@
 import { useQuery } from "react-query";
-import { useBreed, useNumber } from "../../contexts/DogsContext";
+import { useBreed, useNumber } from "../../../contexts/DogsContext";
 
 // main
 export default function ImageContainer() {

@@ -12,26 +12,27 @@ export default function TaskApp() {
 
   return (
     <div className="TaskApp">
-      <div>
-        <button>|||</button>
-        <button>+</button>
-      </div>
-      <div className="main">
-        <div>
-          <table className="job">
-            {count.map((item, index) => (
-              <tr
-                key={index}
-                className={index === count.length - 1 ? "last-item" : ""}
-              >
-                <td>{item}</td>
-                <td>
-                  <button>Edit</button>
-                  <button>Del</button>
-                </td>
-              </tr>
-            ))}
-            {/* <tr>
+      <div className="ta_background">
+        <div className="ta_buttons">
+          <button>|||</button>
+          <button>+</button>
+        </div>
+        <div className="main">
+          <div>
+            <table className="job">
+              {count.map((item, index) => (
+                <tr
+                  key={index}
+                  className={index === count.length - 1 ? "last-item" : ""}
+                >
+                  <td>{item}</td>
+                  <td>
+                    <button>Edit</button>
+                    <button>Del</button>
+                  </td>
+                </tr>
+              ))}
+              {/* <tr>
               <td>
                 <form>
                   <input
@@ -41,7 +42,8 @@ export default function TaskApp() {
                 </form>
               </td>
             </tr> */}
-          </table>
+            </table>
+          </div>
         </div>
       </div>
     </div>

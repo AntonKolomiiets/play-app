@@ -43,7 +43,7 @@ export default function Nav() {
         <li>
           {/* change button based on state */}
           {isAuthenticated ? (
-            <button onClick={handleLogout}>Logout</button>
+            <button id="navButton" onClick={handleLogout}>Logout</button>
           ) : (
             <NavLink to="/login">Login</NavLink>
           )}
