@@ -1,14 +1,8 @@
-import { useState } from "react";
-import "./TaskApp.css"
+import "./TaskApp.css";
 
 // Mock todo list
 export default function TaskApp() {
-  const [count, setCount] = useState([
-    "new task",
-    "old task",
-    "Learn React",
-    "Make To-do app",
-  ]);
+  const Tasks = ["new task", "old task", "Learn React", "Make To-do app"];
 
   return (
     <div className="TaskApp">
@@ -20,10 +14,10 @@ export default function TaskApp() {
         <div className="main">
           <div>
             <table className="job">
-              {count.map((item, index) => (
+              {Tasks.map((item, index) => (
                 <tr
                   key={index}
-                  className={index === count.length - 1 ? "last-item" : ""}
+                  className={index === Tasks.length - 1 ? "last-item" : ""}
                 >
                   <td>{item}</td>
                   <td>
@@ -32,16 +26,6 @@ export default function TaskApp() {
                   </td>
                 </tr>
               ))}
-              {/* <tr>
-              <td>
-                <form>
-                  <input
-                    type="text"
-                    style={{ background: "none", border: "none" }}
-                  />
-                </form>
-              </td>
-            </tr> */}
             </table>
           </div>
         </div>

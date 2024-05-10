@@ -15,6 +15,7 @@ export default function Nav() {
     navigate("/login");
   }
 
+  // Render
   return (
     <nav className="Nav">
       <Link to="/home" className="title">
@@ -43,7 +44,9 @@ export default function Nav() {
         <li>
           {/* change button based on state */}
           {isAuthenticated ? (
-            <button id="navButton" onClick={handleLogout}>Logout</button>
+            <button id="navButton" onClick={handleLogout}>
+              Logout
+            </button>
           ) : (
             <NavLink to="/login">Login</NavLink>
           )}

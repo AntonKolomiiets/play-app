@@ -1,7 +1,7 @@
 import React from "react";
 import "./DogPictureContainer.css";
 
-// Define an interface for the component props
+// struct
 interface DogPictureContainerProps {
   imageUrl: string;
 }

@@ -2,7 +2,12 @@ import DogPictureContainer from "../DogPictureContainer/DogPictureContainer";
 import DogPictureExpandedContainer from "../DogPictureExpandedContainer/DogPictureExpandedContainer";
 import { useState } from "react";
 
-export default function DogPicture({ imageUrl }) {
+// struct
+interface DogCardProps {
+  imageUrl: string;
+}
+
+export default function DogCard({ imageUrl }: DogCardProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDetails = () => {

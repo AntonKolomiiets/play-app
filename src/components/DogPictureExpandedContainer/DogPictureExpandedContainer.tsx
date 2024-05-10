@@ -5,6 +5,7 @@ interface DogPictureContainerProps {
   imageUrl: string;
 }
 
+// Main
 const DogPictureExpandedContainer: React.FC<DogPictureContainerProps> = ({
   imageUrl,
 }) => {

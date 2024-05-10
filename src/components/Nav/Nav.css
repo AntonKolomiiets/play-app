@@ -69,7 +69,7 @@ nav .menu span {
   background-color: #fff;
   border-radius: 0.2rem;
 }
-/* Contextually check if viewport is vertical */
+
 @media (max-width: 580px) {
   nav .menu {
     display: flex;
@@ -81,8 +81,8 @@ nav .menu span {
     transform: scale(0.85);
   }
   nav {
-  flex-direction: column;
-  align-items: start;
+    flex-direction: column;
+    align-items: start;
   }
   nav ul {
     display: none;
@@ -95,10 +95,8 @@ nav .menu span {
   }
   nav ul li {
     text-align: center;
-    
   }
   nav ul li a {
-    
     margin: 0.2rem 0.5rem;
   }
-} 
+}
