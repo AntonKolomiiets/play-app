@@ -35,12 +35,16 @@ export default function Nav() {
         <li>
           <NavLink to="/about">About</NavLink>
         </li>
-        <li>
-          <NavLink to="Link2">Task</NavLink>
-        </li>
-        <li>
-          <NavLink to="/dogs">Dogs</NavLink>
-        </li>
+        {isAuthenticated && (
+          <li>
+            <NavLink to="Link2">Task</NavLink>
+          </li>
+        )}
+        {isAuthenticated && (
+          <li>
+            <NavLink to="/dogs">Dogs</NavLink>
+          </li>
+        )}
         <li>
           {/* change button based on state */}
           {isAuthenticated ? (

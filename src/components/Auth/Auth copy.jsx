@@ -1,27 +1,18 @@
 import { useState } from "react";
-import { useAuth } from "../../contexts/AuthContext";
-import { useNavigate } from "react-router-dom";
 
-export default function Login() {
+const Auth = () => {
   const [isLogin, setIsLogin] = useState(true);
-  const [error, setError] = useState("");
-
+  const [error, setError] = useState(null);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const { isAuthenticated,login } = useAuth();
-  const navigate = useNavigate();
 
-  // if (isAuthenticated) {
-  //   navigate("/Link2");
-  // }
-
-  const viewLogin = (status: any) => {
-    setError("");
+  const viewLogin = (status) => {
+    setError(null);
     setIsLogin(status);
   };
 
-  const handleSubmit = async (event: any, endpoint: any) => {
+  const handleSubmit = async (event, endpoint) => {
     event.preventDefault();
     if (!isLogin && password !== confirmPassword) {
       setError("Passwords dont match!");
@@ -33,19 +24,25 @@ export default function Login() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ user_name: username, password }),
       });
+      
+      
 
+      // if (!response.ok) {
+      //   const text = await response.text();
+      //   throw new Error(`Server error: ${response.status} ${text}`);
+      // }
       const data = await responce.json();
 
       if (data.token) {
-        login(data.token);
-        navigate("/Link2");
+        localStorage.setItem('token', data.token);
+        console.log('Token stored: ', data.token);
       }
     } catch (err) {
-      setError("err.massage");
+      setError(err.massage);
       console.error("Error", err);
     }
-    
   };
+
 
   return (
     <div>
@@ -80,4 +77,6 @@ export default function Login() {
       </div>
     </div>
   );
-}
+};
+
+export default Auth;

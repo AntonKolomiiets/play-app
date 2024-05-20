@@ -1,0 +1,12 @@
+.td-main:hover {
+    background-color: rgb(237, 235, 235);
+
+}
+
+.td-main {
+    cursor: pointer;
+    /* background-color: black; */
+    border-radius: 8px;
+    padding-left: 0.6rem;
+    
+}

@@ -47,10 +47,6 @@ export default function PictureGrid() {
       }
     });
 
-    const currentElement = lastElementRef.current;
-    if (currentElement) {
-      observer.current.observe(currentElement);
-    }
 
     return () => {
       if (currentObserver) currentObserver.disconnect();

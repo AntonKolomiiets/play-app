@@ -1,3 +1,5 @@
+@import "./src/assets/fonts/satoshi.css";
+
 .dpec_background {
   background-color: rgba(0, 0, 0, 0.6);
   position: fixed;
@@ -25,10 +27,18 @@
 }
 
 .dpec_breedName {
+  padding-left: 1rem;
   text-transform: capitalize;
+  font-family: "Satoshi-Light", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 1200;
+  font-display: swap;
+  font-style: normal;
+  font-size: 1.5rem;
 }
 
 .dpec_picFormat {
+  padding-right: 1rem;
   width: 20rem;
   height: 25rem;
   display: flex;

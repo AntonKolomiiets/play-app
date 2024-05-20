@@ -4,7 +4,7 @@ import "./App.css";
 import Nav from "./components/Nav/Nav";
 import About from "./pages/About/About";
 import Dogs from "./pages/Dogs/Dogs";
-import TaskApp from "./pages/TaskApp/TaskApp";
+import TaskApp from "./pages/TaskApp/TaskApp.jsx";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import { PrivateRoute } from "./components/PrivateRoute/PrivateRoute"; // Component for cheching is user is Looged
@@ -12,7 +12,7 @@ import { AuthProvider } from "./contexts/AuthContext"; // Context for for checki
 
 function App() {
   return (
-    <>
+    
       <AuthProvider>
         <Nav />
         <div className="PageComponent">
@@ -27,7 +27,7 @@ function App() {
           </Routes>
         </div>
       </AuthProvider>
-    </>
+    
   );
 }
 

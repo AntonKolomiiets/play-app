@@ -20,9 +20,9 @@ const DogPictureExpandedContainer: React.FC<DogPictureContainerProps> = ({
     <div className="dpec_background">
       <div className="dpec_container">
         <div>
-          <p className="dpec_breedName">
+          <h2 className="dpec_breedName">
             Breed: {breedName.replace(/-/g, " ")}
-          </p>
+          </h2>
         </div>
         <div className="dpec_picFormat">
           <img src={imageUrl} alt="Dog" className="dpec_image" />
