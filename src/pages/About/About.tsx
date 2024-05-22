@@ -1,6 +1,8 @@
+
 export default function About() {
   return (
     <div>
+      
       <h1>About</h1>
       <div>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ut

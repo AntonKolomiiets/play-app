@@ -1,18 +1,12 @@
 
 
-const TaskButton = ({id, addTask, task}) => {
+const TaskButton = ({id, deleteTask, refetch }) => {
     const handleClick = () => {
-        const newTask = {
-          user_id: 1,
-          title: "Task from React",
-          status: "0",
-          priority: "0"
-        };
-        addTask(newTask);
+        deleteTask(id);
     };
 
 
-    return <button onClick={handleClick}>{id}</button>;
+    return <button onClick={handleClick}>Delete</button>;
 };
 
 export default TaskButton;

@@ -1,0 +1,42 @@
+.m_body {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.m_modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+  width: 30rem;
+  height: 30rem;
+  background-color: rgb(255, 255, 255);
+  border: solid 0.7rem;
+
+  border-radius: 15px;
+  /* position: absolute; */
+  padding: 0.7rem;
+  animation: openModal .1s ease-in-out;
+  /* transform:scale(0%) */
+}
+
+@keyframes openModal {
+  0% {
+    transform: translate(0%, 0%) scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0%, 0%) scale(1);
+    opacity: 1;
+  }
+}

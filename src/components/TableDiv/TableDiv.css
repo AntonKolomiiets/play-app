@@ -5,8 +5,17 @@
 
 .td-main {
     cursor: pointer;
-    /* background-color: black; */
+    min-height: 4rem;
     border-radius: 8px;
     padding-left: 0.6rem;
+    max-width: 10rem;
+    overflow: hidden;
     
+}
+
+.td-main button {
+
+}
+td {
+   margin: 1rem;
 }
