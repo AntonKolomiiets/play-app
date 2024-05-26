@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useAuth } from "../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
+import "./Login.css";
 
 export default function Login() {
   const [isLogin, setIsLogin] = useState(true);
@@ -9,7 +10,7 @@ export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const { isAuthenticated,login } = useAuth();
+  const { isAuthenticated, login } = useAuth();
   const navigate = useNavigate();
 
   // if (isAuthenticated) {
@@ -41,42 +42,57 @@ export default function Login() {
         navigate("/Link2");
       }
     } catch (err) {
-      setError("err.massage");
+      // setError(err.massage);
       console.error("Error", err);
     }
-    
   };
 
   return (
-    <div>
-      <form>
-        <h2>{isLogin ? "Please log in" : "Please sign up!"}</h2>
-        <input
-          type="text"
-          placeholder="username"
-          onChange={(event) => setUsername(event.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="type password"
-          onChange={(event) => setPassword(event.target.value)}
-        />
-        {!isLogin && (
+    <div className="auth_container">
+      <div className="auth_box">
+        <form>
+          <h2>{isLogin ? "Please log in" : "Please sign up!"}</h2>
+          <input
+            type="text"
+            placeholder="username"
+            autoFocus
+            onChange={(event) => setUsername(event.target.value)}
+          />
           <input
             type="password"
-            placeholder="confirm password"
-            onChange={(event) => setConfirmPassword(event.target.value)}
+            placeholder="type password"
+            onChange={(event) => setPassword(event.target.value)}
           />
-        )}
-        <input
-          type="submit"
-          onClick={(event) => handleSubmit(event, isLogin ? "login" : "signup")}
-        />
-        {error && <p>{error}</p>}
-      </form>
-      <div>
-        <button onClick={() => viewLogin(false)}>Sign Up</button>
-        <button onClick={() => viewLogin(true)}>Login</button>
+          {!isLogin && (
+            <input
+              type="password"
+              placeholder="confirm password"
+              onChange={(event) => setConfirmPassword(event.target.value)}
+            />
+          )}
+          <input
+            type="submit"
+            onClick={(event) =>
+              handleSubmit(event, isLogin ? "login" : "signup")
+            }
+          />
+          {error && <p>{error}</p>}
+        </form>
+
+        <div className="auth_buttons">
+          <button
+            onClick={() => viewLogin(false)}
+            style={{ backgroundColor: !isLogin ? "#FFF" : "#BCBCBC" }}
+          >
+            Sign Up
+          </button>
+          <button
+            onClick={() => viewLogin(true)}
+            style={{ backgroundColor: !isLogin ? "#BCBCBC" : "#FFF" }}
+          >
+            Login
+          </button>
+        </div>
       </div>
     </div>
   );

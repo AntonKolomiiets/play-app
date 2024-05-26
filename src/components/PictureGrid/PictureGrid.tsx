@@ -29,7 +29,7 @@ export default function PictureGrid() {
     isLoading,
     isFetchingNextPage,
   } = useInfiniteQuery<string, Error>("dogImages", fetchImageUrl, {
-    getNextPageParam: (pages) => pages.length + 1,
+    getNextPageParam: (lastPage, pages) => pages.length + 1,
   });
 
   const observer = useRef<IntersectionObserver | null>(null);
@@ -43,10 +43,14 @@ export default function PictureGrid() {
 
     observer.current = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting && hasNextPage) {
+        console.log("Fetching next page");  // Debug log
         fetchNextPage();
       }
     });
 
+    if (lastElementRef.current) {
+      observer.current.observe(lastElementRef.current);
+    }
 
     return () => {
       if (currentObserver) currentObserver.disconnect();

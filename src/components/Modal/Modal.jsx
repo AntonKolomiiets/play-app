@@ -47,40 +47,57 @@ const Modal = ({ mode, isOpen, onClose, task, addTask, editTask }) => {
   return (
     <div className="m_body">
       <div className="m_modal">
-        <button onClick={() => onClose()}>close</button>
-        <h3>{mode}</h3>
+        <h3>{mode} task</h3>
         <form onSubmit={handleSave}>
-          <input
-            autoFocus
-            required
-            type="text"
-            maxLength={15}
-            placeholder="Task Title"
-            name="title"
-            value={data.title}
-            onChange={handleChange}
-          />
-          <input
-            type="text"
-            placeholder="Task Description"
-            name="description"
-            value={data.description}
-            onChange={handleChange}
-          />
-          <input
-            type="date"
-            name="due_date"
-            value={data.due_date}
-            onChange={handleChange}
-          />
-          <input
-            type="number"
-            name="priority"
-            value={data.priority}
-            onChange={handleChange}
-          />
+          <div className="m_title_div" id="m_1">
+            <label for="title">Title:</label>
+            <input
+              autoFocus
+              required
+              type="text"
+              maxLength={15}
+              placeholder="Task Title"
+              id="title"
+              name="title"
+              value={data.title}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="m_title_div" id="m_2">
+            <label for="description">Discription:</label>
+            <textarea
+              type="text"
+              placeholder="Task Description"
+              name="description"
+              value={data.description}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="m_title_div" id="m_3">
+            <label for="due_date">Complete until: </label>
+            <input
+              type="date"
+              name="due_date"
+              value={data.due_date}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="m_priority_div">
+            <label for="priority">Priority: {data.priority}</label>
+            <input
+              type="range"
+              min="0"
+              max="3"
+              name="priority"
+              className="m_priority_slider"
+              value={data.priority}
+              onChange={handleChange}
+            />
+          </div>
+        <div className="m_buttons">
           <button type="submit">Save</button>
           <button onClick={onClose}>Cancel</button>
+        </div>
         </form>
       </div>
     </div>

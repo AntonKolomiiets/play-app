@@ -23,13 +23,20 @@ nav .title {
 }
 
 nav #navButton {
+  border: none;
   border-radius: 8px;
   height: 2.1rem;
-  width: 3rem;
+  width: auto;
   margin-right: 1rem;
-  background-color: #ead6e0;
+  background-color: #d6e1ea;
   color: #3a3a3a;
   box-shadow: none;
+  cursor: pointer;
+}
+
+nav #navButton:hover {
+  content: "X";
+  filter: brightness(50%);
 }
 
 nav ul {
